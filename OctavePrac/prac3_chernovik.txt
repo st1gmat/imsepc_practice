@@ -1,0 +1,70 @@
+function M = matchange(n)
+  M = zeros(n,n);
+  x = 1;
+  for k = 1:n
+    if mod(k, 2) == 1
+      for i = 1:k
+        M(i, k-i+1) = x;
+        x = x + 1;
+      endfor
+    else
+      for i = k:-1:1
+        M(k-i+1, i) = x;
+        x = x + 1;
+      endfor
+    endif
+  endfor
+endfunctionP
+
+function M = generate_circle_matrix(n, r)
+M = zeros(n);
+
+cx = (n+1)/2;
+cy = (n+1)/2;
+
+for i=1:n
+    for j=1:n
+        dist = sqrt((i-cx)^2 + (j-cy)^2);
+        if dist <= r
+            M(i,j) = 1;
+        end
+    end
+end
+end
+
+
+function M = matchange(n)
+count = 1;
+        for diag = (n+n):-1: 1
+            for i = N:-1:1
+                 for M:-1:1
+                    if i + j == diag
+                        matrix(i, j) = count;
+                        count = count + 1
+                    endif
+                    j = j - 1
+                endfor
+                i = i - 1
+            endfor
+           --diag
+        endfor
+end
+
+
+
+function M = matchange(n)
+count = 1;
+        for diag = (n+n):-1: 1
+            for i = N:-1:1
+                 for M:-1:1
+                    if i + j == diag
+                        matrix(i, j) = count;
+                        count = count + 1
+                    endif
+                    j = j - 1
+                endfor
+                i = i - 1
+            endfor
+           --diag
+        endfor
+end
